@@ -10,6 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20190806060835) do
+
+  create_table "patients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "full_name"
+    t.text     "address",       limit: 65535
+    t.decimal  "lat",                         precision: 8, scale: 2
+    t.decimal  "lng",                         precision: 8, scale: 2
+    t.integer  "phone"
+    t.string   "gender"
+    t.string   "date_of_birth"
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+  end
 
 end
